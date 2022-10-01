@@ -279,4 +279,6 @@ JSON (JavaScript Object Notation) Meskipun bukan subset ketat, JSON sangat mirip
 
 JSON dapat mewakili angka, boolean, string, null, array (urutan nilai berurutan), dan objek (pemetaan nilai string) yang terdiri dari nilai-nilai ini (atau array dan objek lain). JSON tidak secara asli mewakili tipe data yang lebih kompleks seperti fungsi, ekspresi reguler, tanggal, dan sebagainya. (Objek tanggal secara default membuat serial ke string yang berisi tanggal dalam format ISO, sehingga informasinya tidak sepenuhnya hilang.) Jika Anda memerlukan JSON untuk mewakili tipe data tambahan, ubah nilai saat diserialisasi atau sebelum dideserialisasi.
 
+## String
+
 # JS DASAR DOM MANIPULATIOAN
