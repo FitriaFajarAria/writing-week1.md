@@ -70,6 +70,43 @@ Arrow function adalah cara lain menuliskan function. Ini adalah fitur terbaru ya
 Saat menjalankan kode JavaScript, kesalahan yang berbeda dapat terjadi.Kesalahan dapat berupa kesalahan pengkodean yang dilakukan oleh programmer, 
 kesalahan karena salah input, dan hal-hal yang tidak terduga lainnya. Lalu kemudian JavaScript akan membuat objek Error dengan dua properti yaitu nama dan pesan.
 
+#### Macam-Macam Error
+
+- Eval Error
+   
+Membuat instance yang mewakili kesalahan yang terjadi terkait fungsi global eval().
+
+- Range Error (A number "out of range" has occurred)
+
+Membuat instance yang mewakili kesalahan yang terjadi saat variabel numerik atau parameter berada di luar rentang validnya.
+
+- Reference Error (An illegal reference has occurred)
+
+Membuat instance yang mewakili kesalahan yang terjadi saat mereferensikan referensi yang tidak valid.
+
+- Syntax Error (A syntax error has occurred)
+
+Membuat instance yang mewakili kesalahan sintaks.
+
+- Type Error (A type error has occurred)
+
+Membuat instance yang mewakili kesalahan yang terjadi saat variabel atau parameter bukan tipe yang valid.
+
+- URI Error (An error in encodeURI() has occurred)
+
+Membuat instance yang mewakili kesalahan yang terjadi saat encodeURI() atau decodeURI() melewati parameter yang tidak valid.
+URI (Uniform Resource Identifier) .
+
+- Aggregate Error
+
+Membuat instance yang mewakili beberapa kesalahan yang dibungkus dalam satu kesalahan ketika beberapa kesalahan perlu dilaporkan oleh suatu operasi, misalnya oleh Promise.any().
+
+- Internal Non-Standard Error
+
+Membuat instance yang mewakili kesalahan yang terjadi saat kesalahan internal di mesin JavaScript dilemparkan. Misalnya. "terlalu banyak rekursi".
+
+
+
 ### Debugging
 
 Debugging adalah proses menguji, menemukan, dan mengurangi bug (kesalahan) pada program komputer.
