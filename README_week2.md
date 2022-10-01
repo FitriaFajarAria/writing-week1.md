@@ -221,5 +221,30 @@ Variabel yang belum diberi nilai memiliki nilai yang tidak ditentukan. Properti 
                      
                      
 - Numeric types
-                     
+
+Tipe data numerik memiliki dua tipe bawaan yaitu Number dan BigInt.
+
+- BigInt adalah primitif numerik dalam JavaScript yang dapat mewakili bilangan bulat dengan presisi arbitrer. Dengan BigInts, kita dapat dengan aman menyimpan dan mengoperasikan bilangan bulat besar bahkan di luar batas bilangan bulat aman untuk Numbers. BigInt dibuat dengan menambahkan n ke akhir bilangan bulat atau dengan memanggil konstruktor. Kita dapat memperoleh nilai aman terbesar yang dapat ditambahkan dengan Numbers dengan menggunakan konstanta Number.MAX_SAFE_INTEGER. 
+kita dapat menggunakan operator +, *, -, **,.
+
+- NaN ("Bukan Angka") biasanya ditemui ketika hasil operasi aritmatika tidak dapat dinyatakan sebagai angka. Ini juga satu-satunya nilai dalam JavaScript yang tidak sama dengan dirinya sendiri.
+
+
+- String type
+
+Tipe Data String digunakan untuk mewakili data tekstual, setiap elemen dalam String menempati posisi dalam String. Elemen pertama berada pada indeks 0, berikutnya pada indeks 1, dan seterusnya. Panjang dari sebuah String adalah jumlah elemen di dalamnya. String JavaScript tidak dapat diubah. Ini berarti bahwa setelah string dibuat, tidak mungkin untuk mengubahnya.
+Namun, masih dimungkinkan untuk membuat string lain berdasarkan operasi pada string asli. Sebagai contoh:
+1. Sebuah substring dari aslinya dengan memilih huruf individu atau menggunakan substring().
+2. Penggabungan dua string menggunakan operator penggabungan (+) atau concat().
+
+
+- Symbol type
+
+Simbol adalah nilai primitif yang unik dan tidak dapat diubah dan dapat digunakan sebagai kunci dari properti Objek. Dalam beberapa bahasa pemrograman, Simbol disebut "atom".Simbol sering digunakan untuk menambahkan kunci properti unik ke objek yang tidak akan bertabrakan dengan kunci yang mungkin ditambahkan oleh kode lain ke objek, dan yang disembunyikan dari mekanisme apa pun yang biasanya digunakan kode lain untuk mengakses objek. Untuk membuat Simbol primitif baru, kita menulis Symbol() dengan string opsional sebagai deskripsinya:
+
+            const sym1 = Symbol();
+            const sym2 = Symbol('foo');
+            const sym3 = Symbol('foo');
+            
+            
 # JS DASAR DOM MANIPULATIOAN
