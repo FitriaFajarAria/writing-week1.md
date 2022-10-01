@@ -246,5 +246,37 @@ Simbol adalah nilai primitif yang unik dan tidak dapat diubah dan dapat digunaka
             const sym2 = Symbol('foo');
             const sym3 = Symbol('foo');
             
-            
+ 
+ 
+ - Objects
+ 
+ Dalam ilmu komputer, objek adalah nilai dalam memori yang mungkin dirujuk oleh pengenal.
+ 
+ - Properties
+ 
+Dalam JavaScript, objek dapat dilihat sebagai kumpulan properti. Dengan sintaks literal objek, sekumpulan properti terbatas diinisialisasi; maka properti dapat ditambahkan dan dihapus. Nilai properti dapat berupa nilai jenis apa pun, termasuk objek lain, yang memungkinkan membangun struktur data yang kompleks. Properti diidentifikasi menggunakan nilai kunci. Nilai kunci adalah nilai String atau nilai Simbol. Ada dua jenis properti objek: properti data dan properti pengakses. Setiap properti memiliki atribut yang sesuai. Setiap atribut diakses secara internal oleh mesin JavaScript, tetapi Anda dapat mengaturnya melalui Object.defineProperty(), atau membacanya melalui Object.getOwnPropertyDescriptor().
+ 
+
+### Data property
+
+Properti data mengaitkan kunci dengan nilai. Hal ini dapat dijelaskan dengan atribut berikut:
+
+- value
+Nilai yang diambil oleh akses get properti. Dapat berupa nilai JavaScript apa pun.
+
+### Accessor property
+
+Mengaitkan kunci dengan salah satu dari dua fungsi pengakses (dapatkan dan setel) untuk mengambil atau menyimpan nilai. Properti accessor memiliki atribut berikut:
+- get = Fungsi yang dipanggil dengan daftar argumen kosong untuk mengambil nilai properti setiap kali akses get ke nilai dilakukan. 
+- set = Fungsi yang dipanggil dengan argumen yang berisi nilai yang ditetapkan. Dieksekusi setiap kali properti tertentu dicoba untuk diubah. 
+- enumerable = Nilai boolean yang menunjukkan jika properti dapat dihitung oleh for...in loop.
+- configurable = Nilai boolean yang menunjukkan apakah properti dapat dihapus, dapat diubah menjadi properti data, dan dapat mengubah atributnya.
+
+
+### Structured data: JSON
+
+JSON (JavaScript Object Notation) Meskipun bukan subset ketat, JSON sangat mirip dengan subset sintaks JavaScript. Meskipun banyak bahasa pemrograman mendukung JSON, ini sangat berguna untuk aplikasi berbasis JavaScript, termasuk situs web dan ekstensi browser.
+
+JSON dapat mewakili angka, boolean, string, null, array (urutan nilai berurutan), dan objek (pemetaan nilai string) yang terdiri dari nilai-nilai ini (atau array dan objek lain). JSON tidak secara asli mewakili tipe data yang lebih kompleks seperti fungsi, ekspresi reguler, tanggal, dan sebagainya. (Objek tanggal secara default membuat serial ke string yang berisi tanggal dalam format ISO, sehingga informasinya tidak sepenuhnya hilang.) Jika Anda memerlukan JSON untuk mewakili tipe data tambahan, ubah nilai saat diserialisasi atau sebelum dideserialisasi.
+
 # JS DASAR DOM MANIPULATIOAN
