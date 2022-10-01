@@ -151,3 +151,75 @@ terdapat juga cara untuk mengaktifkan debugging seperti contoh beberapa peramban
   - Buka peramban.
   - Setting, pilih "Pengembang Web".
   - Terakhir, pilih "Konsol Web".
+
+# JS DASAR  Data Type Built in Prototype & Method
+
+## Data Type
+
+### Tipe Data JavaScript dan Struktur Data
+
+Himpunan tipe dalam bahasa JavaScript terdiri dari nilai dan objek primitif.
+
+#### Primitive values (Nilai Primitif)
+
+Semua jenis kecuali objek mendefinisikan nilai yang tidak dapat diubah (yaitu, nilai yang tidak dapat diubah). Misalnya, String tidak dapat diubah. Kita dapat menyebut nilai jenis ini sebagai "nilai primitif".
+ 
+- Boolean type = Boolean mewakili entitas logis dan dapat memiliki dua nilai: benar dan salah. 
+   
+Misalnya, dalam JavaScript, kondisional Boolean sering digunakan untuk memutuskan bagian kode mana yang akan dieksekusi (seperti dalam pernyataan if) atau ulangi (seperti dalam perulangan for).
+   
+   
+                   /* JavaScript if statement */
+                     if (boolean conditional) {
+                     // code to execute if the conditional is true
+                     }
+
+                     if (boolean conditional) {
+                      console.log("boolean conditional resolved to true");
+                     } else {
+                      console.log("boolean conditional resolved to false");
+                     }
+
+                     /* JavaScript for loop */
+                     for (control variable; boolean conditional; counter) {
+                     // code to execute repeatedly if the conditional is true
+                     }
+              
+
+- Null type
+
+Tipe Null memiliki tepat satu nilai, Nilai null mewakili ketidakhadiran yang disengaja dari nilai objek apa pun. Ini adalah salah satu nilai primitif JavaScript dan diperlakukan sebagai salah untuk operasi boolean. null mengungkapkan kurangnya identifikasi, yang menunjukkan bahwa variabel tidak menunjuk ke objek. 
+
+
+                     typeof null          // "object" (not "null" for legacy reasons)
+                     typeof undefined     // "undefined"
+                     null === undefined   // false
+                     null  == undefined   // true
+                     null === null        // true
+                     null  == null        // true
+                     !null                // true
+                     isNaN(1 + null)      // false
+                     isNaN(1 + undefined) // true
+                     
+                     
+- Undefined type
+
+Variabel yang belum diberi nilai memiliki nilai yang tidak ditentukan. Properti undefined global mewakili nilai primitif yang tidak terdefinisi. Ini adalah salah satu tipe primitif JavaScript. Variabel yang belum diberi nilai bertipe undefined. Sebuah metode atau pernyataan juga mengembalikan undefined jika variabel yang sedang dievaluasi tidak memiliki nilai yang ditetapkan. Sebuah fungsi mengembalikan undefined jika nilai tidak dikembalikan.
+
+
+                     function test(t) {
+                     if (t === undefined) {
+                     return 'Undefined value!';
+                     }
+                     return t;
+                     }
+
+                     let x;
+
+                     console.log(test(x));
+                     // expected output: "Undefined value!"
+                     
+                     
+- Numeric types
+                     
+# JS DASAR DOM MANIPULATIOAN
