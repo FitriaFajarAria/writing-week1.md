@@ -281,4 +281,110 @@ JSON dapat mewakili angka, boolean, string, null, array (urutan nilai berurutan)
 
 ## String
 
+Objek String digunakan untuk mewakili dan memanipulasi urutan karakter. String berguna untuk menyimpan data yang dapat direpresentasikan dalam bentuk teks. Beberapa operasi yang paling sering digunakan pada string adalah memeriksa panjangnya, membangun dan menggabungkannya menggunakan operator string + dan +=, memeriksa keberadaan atau lokasi substring dengan metode indexOf(), atau mengekstrak substring dengan substring () metode. String dapat dibuat sebagai primitif, dari literal string, atau sebagai objek, menggunakan konstruktor String(). Primitif string dan objek string memiliki banyak perilaku, tetapi memiliki perbedaan dan peringatan penting lainnya.
+
+### Character access
+
+Ada dua cara untuk mengakses karakter individu dalam sebuah string. Yang pertama adalah metode charAt() :
+
+            'cat'.charAt(1) // gives value "a"
+           
+Cara lain adalah dengan memperlakukan string sebagai objek seperti array, di mana karakter individu sesuai dengan indeks numerik:
+
+            'cat'[1] // gives value "a"
+
+Object.defineProperty() mendefinisikan properti baru secara langsung pada objek, atau memodifikasi properti yang ada pada objek, dan mengembalikan objek.
+
+            Object.defineProperty(obj, prop, descriptor)
+            
+            
+   - obj (Objek untuk mendefinisikan properti).
+   - prop (Nama atau Simbol properti yang akan didefinisikan atau dimodifikasi).
+   - descriptor (untuk properti yang sedang didefinisikan atau dimodifikasi).
+   - Return value (Objek yang diteruskan ke fungsi).
+
+### Comparing strings
+
+Dalam C, fungsi strcmp() digunakan untuk membandingkan string. Dalam JavaScript, kita cukup menggunakan operator kurang dari dan lebih besar dari.
+
+### String primitives and String objects
+
+JavaScript membedakan antara objek String dan nilai string primitif. String literal (dilambangkan dengan tanda kutip ganda atau tunggal) dan string yang dikembalikan dari panggilan String dalam konteks non-konstruktor (yaitu, dipanggil tanpa menggunakan kata kunci baru) adalah string primitif. Dalam konteks di mana metode akan dipanggil pada string primitif atau pencarian properti terjadi, JavaScript akan secara otomatis membungkus string primitif dan memanggil metode atau melakukan pencarian properti pada objek pembungkus sebagai gantinya.
+
+
+                  const strPrim = "foo"; // A literal is a string primitive
+                  const strPrim2 = String(1); // Coerced into the string primitive "1"
+                  const strPrim3 = String(true); // Coerced into the string primitive "true"
+                  const strObj = new String(strPrim); // String with new returns a string wrapper object.
+
+                  console.log(typeof strPrim); // Logs "string"
+                  console.log(typeof strPrim2); // Logs "string"
+                  console.log(typeof strPrim3); // Logs "string"
+                  console.log(typeof strObj);  // Logs "object"
+                  
+String primitif dan objek String juga memberikan hasil yang berbeda saat menggunakan eval(). Primitif yang diteruskan ke eval diperlakukan sebagai kode sumber Objek string diperlakukan seperti semua objek lainnya, dengan mengembalikan objek. Sebagai contoh:
+
+                  const s1 = '2 + 2';              // creates a string primitive
+                  const s2 = new String('2 + 2');  // creates a String object
+                  console.log(eval(s1));           // returns the number 4
+                  console.log(eval(s2));           // returns the string "2 + 2"
+ 
+ Objek String selalu dapat dikonversi ke mitra primitifnya dengan metode valueOf().
+ 
+                  console.log(eval(s2.valueOf()))  // returns the number 4
+ 
+ ### Long literal strings
+ 
+Biasanya kode akan menyertakan string yang sangat panjang, daripada memiliki garis yang terus-menerus sangat panjang, kita bisa secara khusus memecah string menjadi beberapa baris dalam kode sumber tanpa mempengaruhi konten string yang sebenarnya.Untuk itu dapat menggunakan operator (tambah dan kurang +-) untuk menambahkan beberapa string bersama-sama, seperti ini:
+
+                    const longString = "This is a very long string which needs " +
+                   "to wrap across multiple lines because " +
+                   "otherwise my code is unreadable."
+                   
+Atau dapat menggunakan karakter garis miring terbalik (\) di akhir setiap baris untuk menunjukkan bahwa string akan berlanjut pada baris berikutnya.       
+
+                    const longString = "This is a very long string which needs \
+                    to wrap across multiple lines because \
+                    otherwise my code is unreadable."
+                    
+### Constructor
+
+String() Membuat objek String baru. Ia melakukan konversi tipe ketika dipanggil sebagai fungsi, bukan sebagai konstruktor, yang biasanya lebih berguna.
+
+- Static methods
+
+String.fromCharCode() Mengembalikan string yang dibuat dengan menggunakan urutan nilai Unicode yang ditentukan.
+
+- String.fromCodePoint()
+
+Mengembalikan string yang dibuat dengan menggunakan urutan titik kode yang ditentukan.
+
+- String.raw()
+
+Mengembalikan string yang dibuat dari string template mentah.
+
+### Instance properties
+
+String.prototype.length Properti long read-only dari string berisi panjang string.
+
+### Instance methods
+
+- String.prototype.at() Mengembalikan karakter pada indeks yang ditentukan. Menerima bilangan bulat negatif, yang menghitung mundur dari karakter string terakhir.
+- String.prototype.charAt() Mengembalikan karakter pada indeks yang ditentukan.
+- String.prototype.charCodeAt() Mengembalikan angka yang merupakan nilai satuan pada indeks yang diberikan.
+- String.prototype.codePointAt() Mengembalikan bilangan bulat nonnegatif yang merupakan nilai kode titik.
+- String.prototype.concat() Menggabungkan teks dari dua (atau lebih) string dan mengembalikan string baru.
+- String.prototype.includes() Menentukan apakah string panggilan berisi searchString.
+- String.prototype.indexOf() Mengembalikan indeks di dalam objek String pemanggilan dari kemunculan pertama searchValue, atau -1 jika tidak ditemukan.
+- String.prototype.lastIndexOf() Mengembalikan indeks di dalam objek String pemanggilan terakhir dari searchValue, atau -1 jika tidak ditemukan.
+- String.prototype.localeCompare() Mengembalikan angka yang menunjukkan apakah string referensi compareString muncul sebelum, sesudah, atau setara dengan string yang diberikan dalam urutan pengurutan.
+- String.prototype.match() Digunakan untuk mencocokkan ekspresi reguler regexp dengan string.
+- String.prototype.matchAll() Mengembalikan iterator dari semua kecocokan regexp.
+- String.prototype.normalize() Mengembalikan Bentuk Normalisasi Unicode dari nilai string panggilan.
+- String.prototype.padEnd() Pads string saat ini dari akhir dengan string yang diberikan dan mengembalikan string baru dengan panjang targetLength.
+- String.prototype.padStart() Mengisi string saat ini dari awal dengan string tertentu dan mengembalikan string baru dengan panjang targetLength.
+- String.prototype.repeat() Mengembalikan string yang terdiri dari elemen objek berulang kali menghitung.
+- String.prototype.replace() Digunakan untuk mengganti kemunculan searchFor menggunakan replaceWith. searchFor dapat berupa string atau Regular Expression, dan replaceWith dapat berupa string atau fungsi.
+- String.prototype.replaceAll() Digunakan untuk mengganti semua kemunculan searchFor menggunakan replaceWith. searchFor dapat berupa string atau Regular Expression, dan replaceWith dapat berupa string atau fungsi.
+- 
 # JS DASAR DOM MANIPULATIOAN
