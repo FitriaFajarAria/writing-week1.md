@@ -22,7 +22,7 @@ Local scope berarti kita mendeklarasikan variabel didalam blocks seperti functio
 Maka variabel hanya bisa diakses didalam blocks saja. Tidak bisa diakses diluar blocks. Contohnya :
 
 
-## FUNCTION
+## Function
 
 Function adalah sebuah blok kode dalam sebuah grup untuk menyelesaikan 1 task/1 fitur. Saat kita membutuhkan fitur tersebut nantinya, kita bisa kembali menggunakannya.
 ##### Membuat Function
