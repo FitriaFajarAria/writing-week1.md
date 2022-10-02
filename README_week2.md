@@ -27,8 +27,69 @@ Maka variabel hanya bisa diakses didalam blocks saja. Tidak bisa diakses diluar 
 Function adalah sebuah blok kode dalam sebuah grup untuk menyelesaikan 1 task/1 fitur. Saat kita membutuhkan fitur tersebut nantinya, kita bisa kembali menggunakannya.
 ##### Membuat Function
 
+Untuk membuat sebuah funtion pada java script kita harus membuat format functionya terlebih dahulu, contoh format penulisan function javascript. 
+
+                     <script>
+ 
+                        /membuat function di javascript
+                        function nama_function(){
+                        // isi function nya di buat di sini
+                     }
+ 
+                    </script>
+                    
+- Membuat Fungsi dengan Cara Biasa
+
+                     function namaFungsi(){
+                     console.log("Hello World!");
+                     }
+                     
+- Membuat Fungsi dengan Ekspresi
+
+                     var namaFungsi = function(){
+                     console.log("Hello World!");
+                     }
+                     
+- Membuat Fungsi dengan Tanda Panah
+
+                    var namaFungsi = () => {
+                    console.log("Hello World!");
+                    }
+
+- Membuat Fungsi dengan Kostruktor
+
+                     var namaFungsi = new Function('console.log("Hello World!");');
+                     
+                     
 ##### Memanggil Function
 
+Untuk memanggil fungsi di dalam Javascript kita bisa menuliskan dengan nama fungsinya seperti ini:
+
+                     // membuat fungsi
+                     function sayHello(){
+                     console.log("Hello World!");
+                     }
+
+                     // memanggil fungsi
+                     sayHello() // maka akan menghasilkan -> Hello World!
+                     
+Selain dengan cara di atas, kita juga bisa memanggil fungsi melalui atribut event pada HTML.
+
+                     <!DOCTYPE html>
+                        <html>
+                        <head>
+                         <script>
+                       // membuat fungsi
+                          var sayHello = () => alert("Hello World!");
+                         </script>
+                        </head>
+                       <body>
+                      <!-- Memanggil fungsi saat link diklik -->
+                        <a href="#" onclick="sayHello()">Klik Aku!</a>
+                       </body>
+                       </html>
+                       
+                       
 ### Parameter dan Argumen
 
 #### Parameter Function
@@ -572,4 +633,6 @@ Kedua kategori mewakili dua cara berbeda tipe data ini disimpan ke dalam memori.
                    const binatang1 = ['kucing', 'kelinci', 'ikan'];
                    const binatang2 = binatang1;
                    console.log(binatang1 === binatang2); // true
+                   
+                   
 # JS DASAR DOM MANIPULATIOAN
