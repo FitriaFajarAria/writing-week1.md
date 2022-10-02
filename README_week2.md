@@ -113,15 +113,11 @@ Default parameters bisa digunakan jika kita ingin menjaga function agar tidak er
 
 ### Function Helper
 
-
+Fungsi Helper adalah fungsi JavaScript yang dapat di panggil dari template, Sintaks template Ember membatasi apa yang dapat diekspresikan untuk menjaga agar struktur aplikasi tetap jelas dalam sekejap. Saat perlu menghitung sesuatu menggunakan JavaScript dapat menggunakan fungsi pembantu.
 
 ### Arrow Function
 
 Arrow function adalah cara lain menuliskan function. Ini adalah fitur terbaru yang ada pada ES6 (Javascript Version)
-
-
-### Short Syntax Function
-
 
 
 ##  Errors dan Debugging
