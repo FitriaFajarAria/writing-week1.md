@@ -386,5 +386,33 @@ String.prototype.length Properti long read-only dari string berisi panjang strin
 - String.prototype.repeat() Mengembalikan string yang terdiri dari elemen objek berulang kali menghitung.
 - String.prototype.replace() Digunakan untuk mengganti kemunculan searchFor menggunakan replaceWith. searchFor dapat berupa string atau Regular Expression, dan replaceWith dapat berupa string atau fungsi.
 - String.prototype.replaceAll() Digunakan untuk mengganti semua kemunculan searchFor menggunakan replaceWith. searchFor dapat berupa string atau Regular Expression, dan replaceWith dapat berupa string atau fungsi.
+- String.prototype.slice() Mengekstrak bagian string dan mengembalikan string baru.
+
+
+## Number
+
+Number adalah objek pembungkus primitif yang digunakan untuk mewakili dan memanipulasi angka seperti 37 atau -9,25. Nilai dari tipe lain dapat dikonversi ke angka menggunakan fungsi Number(). When used as a function, Number(value) converts a string or other value to the Number type. If the value can't be converted, it returns NaN.
+
+               Number("123"); // returns the number 123
+               Number("123") === 123; // true
+
+               Number("unicorn"); // NaN
+               Number(undefined); // NaN
+
+### Static properties
+
+- Number.EPSILON Interval terkecil antara dua angka yang dapat diwakili.
+- Number.MAX_SAFE_INTEGER Integer maksimum dalam JavaScript (253 - 1).
+- Number.MAX_VALUE bilangan positif terbesar.
+- Number.MIN_SAFE_INTEGER Integer minimum dalam JavaScript (-(253 - 1)).
+- Number.MIN_VALUE Angka terkecil yang dapat diwakili positif—yaitu, angka positif yang paling dekat dengan nol.
+- Number.NaN Nilai khusus "Not a Number".
+- Number.NEGATIVE_INFINITY Nilai khusus mewakili tak terhingga negatif. Dikembalikan pada overflow.
+- Number.POSITIVE_INFINITY Nilai khusus yang mewakili tak terhingga positif. Dikembalikan pada overflow.
+- Number.prototype Memungkinkan penambahan properti ke objek Number.
+
+
+### Static methods 
+- Number.isNaN() Tentukan apakah nilai yang diteruskan adalah NaN.
 - 
 # JS DASAR DOM MANIPULATIOAN
