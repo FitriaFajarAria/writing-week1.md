@@ -414,5 +414,162 @@ Number adalah objek pembungkus primitif yang digunakan untuk mewakili dan memani
 
 ### Static methods 
 - Number.isNaN() Tentukan apakah nilai yang diteruskan adalah NaN.
-- 
+- Number.isFinite() Tentukan apakah nilai yang diteruskan adalah bilangan berhingga.
+- Number.isInteger() Tentukan apakah nilai yang diteruskan adalah bilangan bulat.
+- Number.isSafeInteger() Tentukan apakah nilai yang diteruskan adalah bilangan bulat yang aman (nomor antara -(253 - 1) and 253 - 1).
+- Number.parseFloat() Ini sama dengan fungsi parseFloat() global.
+- Number.parseInt() Ini sama dengan fungsi parseInt() global.
+
+
+Menggunakan objek Number untuk menetapkan nilai ke variabel numerik
+Contoh berikut menggunakan properti objek Number untuk menetapkan nilai ke beberapa variabel numerik:
+
+               const biggestNum = Number.MAX_VALUE;
+               const smallestNum = Number.MIN_VALUE;
+               const infiniteNum = Number.POSITIVE_INFINITY;
+               const negInfiniteNum = Number.NEGATIVE_INFINITY;
+               const notANum = Number.NaN;
+               
+### Integer range for Number
+
+Contoh berikut menunjukkan nilai integer minimum dan maksimum yang dapat direpresentasikan sebagai objek Number. 
+   
+               const biggestInt = Number.MAX_SAFE_INTEGER; //  (2**53 - 1) =>  9007199254740991
+               const smallestInt = Number.MIN_SAFE_INTEGER; // -(2**53 - 1) => -9007199254740991
+               
+Saat mem-parsing data yang telah diserialisasi ke JSON, nilai integer yang berada di luar rentang ini diperkirakan akan rusak saat parser JSON memaksanya ke tipe Number. Solusi yang mungkin adalah menggunakan String sebagai gantinya. Angka yang lebih besar dapat direpresentasikan menggunakan tipe BigInt.
+Menggunakan Number() untuk mengonversi objek Date
+Contoh berikut mengonversi objek Tanggal menjadi nilai numerik menggunakan Angka sebagai fungsi:
+
+               const d = new Date("December 17, 1995 03:24:00");
+               console.log(Number(d));
+               
+
+## Math
+
+Math adalah objek bawaan yang memiliki properti dan metode untuk konstanta dan fungsi matematika. Ini bukan objek fungsi.
+Matematika bekerja dengan tipe Number. Ini tidak bekerja dengan BigInt. Tidak seperti banyak objek global lainnya, Math bukanlah sebuah konstruktor. Semua properti dan metode Math bersifat statis. Banyak fungsi Math memiliki presisi yang bergantung pada implementasi. Ini berarti bahwa browser yang berbeda dapat memberikan hasil yang berbeda. Bahkan mesin JavaScript yang sama pada OS atau arsitektur yang berbeda dapat memberikan hasil yang berbeda.
+
+
+### Static methods
+- Math.abs() Mengembalikan nilai absolut dari x.
+- Math.acos() Mengembalikan arccosinus dari x.
+- Math.acosh()  Mengembalikan arccosinus hiperbolik dari x.
+- Math.asin() Mengembalikan arcsine dari x.
+- Math.asinh() Mengembalikan arcsinus hiperbolik suatu bilangan.
+- Math.atan() Mengembalikan arctangent dari x.
+- Math.atanh() Mengembalikan arktangen hiperbolik dari x.
+- Math.atan2() Mengembalikan arctangent dari hasil bagi argumennya.
+- Math.cbrt() Mengembalikan akar pangkat tiga dari x.
+- Math.ceil() Mengembalikan bilangan bulat terkecil yang lebih besar dari atau sama dengan x.
+- Math.clz32() Mengembalikan jumlah bit nol terdepan dari bilangan bulat 32-bit x.
+- Math.cos() Mengembalikan kosinus dari x.
+- Math.cosh() Returns the hyperbolic cosine of x. 
+- Math.exp() Mengembalikan ex, di mana x adalah argumen, dan e adalah konstanta Euler (2,718…, basis logaritma natural).
+- Math.expm1() Mengembalikan pengurangan 1 dari exp(x).
+- Math.floor() Mengembalikan bilangan bulat terbesar yang kurang dari atau sama dengan x.
+- Math.fround() Mengembalikan representasi float presisi tunggal terdekat dari x.
+- Math.hypot() Mengembalikan akar kuadrat dari jumlah kuadrat argumennya.
+- Math.imul() Mengembalikan hasil perkalian bilangan bulat 32-bit dari x dan y.
+- Math.log() Mengembalikan logaritma natural dari x.
+- Math.log10() Mengembalikan logaritma basis-10 dari x.
+- Math.log2() Mengembalikan logaritma basis-2 dari x.
+- Math.max() Mengembalikan bilangan terbesar dari nol atau lebih.
+- Math.min() Mengembalikan angka terkecil dari nol atau lebih.
+- Math.pow()  Mengembalikan basis x ke pangkat eksponen y (yaitu, xy).
+- Math.random() Mengembalikan angka pseudo-acak antara 0 dan 1.
+- Math.round() Mengembalikan nilai bilangan x yang dibulatkan ke bilangan bulat terdekat.
+- Math.sign() Mengembalikan tanda x, yang menunjukkan apakah x positif, negatif, atau nol.
+- Math.sin() Mengembalikan sinus dari x.
+- Math.sinh() Mengembalikan sinus hiperbolik dari x.
+- Math.sqrt() Mengembalikan akar kuadrat positif dari x.
+- Math.tan() Mengembalikan tangen x.
+- Math.tanh() Mengembalikan tangen hiperbolik dari x.
+- Math.trunc() Mengembalikan bagian bilangan bulat dari x, menghapus setiap digit pecahan.
+
+
+Dalam JavaScript, kita dapat melakukan hal berikut 
+
+               50 * Math.tan(degToRad(60))
+               
+dengan menggunakan fungsi degToRad() untuk mengonversi 60 derajat ke radian, karena Math.tan() mengharapkan nilai input dalam radian.
+Mengembalikan bilangan bulat acak antara dua batas ini dapat dicapai dengan kombinasi Math.random() dan Math.floor():
+
+               function random(min, max) {
+               const num = Math.floor(Math.random() * (max - min + 1)) + min;
+               return num;
+               }
+
+               random(1, 10);
+
+
+## Primitive & Non Primitive
+
+## Primitif
+
+Tipe data primitif hanya dapat menyimpan satu nilai pada satu waktu dan tidak dapat diubah menggunakan cara yang sama seperti tipe data non-primitif. Tipe data Primitif akan dianggap sama jika nilainya sama. tipe data primitif :
+1. Numbers (Tipe data Number atau angka di JavaScript mewakili angka positif dan negatif entah itu bulat (integer) maupun desimal (floating-point)).
+2. Strings (Tipe data String digunakan untuk mewakili data tekstual atau karakter).
+3. Booleans (adalah tipe data yang hanya memiliki dua nilai, true dan false.)
+4. undefined (nilai yang diberikan ketika variabel dideklarasikan tanpa inisialisasi atau tidak diberi nilai. Ini hanya berlaku untuk variabel let dan var, karena kita tidak dapat mendeklarasikan variabel const tanpa nilai).
+5. null ( dapat digunakan untuk mewakili ketidakhadiran yang disengaja dari nilai objek. Kita dapat menetapkan null ke variabel untuk menunjukkan bahwa saat ini variabel tersebut tidak memiliki nilai apa pun, tapi nanti akan memilikinya).
+
+
+## Non-primitif
+
+Tipe data non-primitif (disebut secara kolektif sebagai Objek) dapat menyimpan lebih dari satu nilai pada satu waktu dan dapat diubah. Tipe data non-primitif akan dianggap berbeda meskipun nilainya sama dan dalam urutan yang sama. Tipe data non-primitif.
+1. Objects (tipe data yang kompleks yang memungkinkan kita menyimpan kumpulan nilai dengan tipe data yang berbeda. Objek berisi properti yang didefinisikan sebagai pasangan kunci dan nilai (key dan value).
+2. Arrays (jenis objek yang dapat digunakan untuk menyimpan beberapa nilai, tanpa properti seperti objek. Array memiliki indeks yang dimulai dari nol dengan kata lain elemen atau nilai pertama di dalam array memiliki indeks 0, elemen berikutnya memiliki indeks 1 dan seterusnya. kita bisa menggunakan indeks untuk memanipulasi nilainya) .
+3. Functions
+
+
+Kedua kategori mewakili dua cara berbeda tipe data ini disimpan ke dalam memori. Primitif disimpan berdasarkan nilai sedangkan Non-Primitif (Objek) disimpan berdasarkan referensi
+
+### Perbedaan Tipe Data Primitif dan Non-primitif
+#### Jumlah nilai yang dapat disimpan
+
+- Primitif, satu nilai:
+
+                  const nama = 'Fitria';
+                  
+- Non-primitif, lebih dari satu nilai:
+
+                  const data = ['Fitria', 19, true, null, undefined];
+ 
+ #### Perubahan Nilai
+ 
+ - Primitif, tidak dapat diubah:
+ 
+                  const nama = 'Fitria';
+                  console.log(nama[0]); // F
+
+                  nama[0] = 'F';
+                  console.log(nama); // Fitria
+                  
+ - Non-primitif, dapat diubah:
+ 
+                  const mahasiswa = ['Fitria', 'Fajar', 'Aria'];
+                  mahasiswa[2] = 'Rain';
+
+                  console.log(mahasiswa); // ["Fitria", "Fajar", "Rain"]
+                  
+  #### Perbandingan
+  
+  Kita bisa menggunakan operator kesetaraan ketat === untuk membandingkan dua buah variabel atau operan, ini akan mengembalikan nilai Boolean (true atau false).
+  - Primitif, dianggap sama jika nilainya sama:
+  
+                  const firstName = 'Fitria';
+                  const namaDepan = 'Fitria';
+
+                  console.log(firstName === namaDepan); // true
+                  
+  - Non-primitif, dianggap berbeda meskipun nilai dan urutannya sama, tapi dianggap sama jika merujuk ke objek atau array yang sama.
+  
+                   const mahasiswa1 = ['fitria', 'fajar', 'aria'];
+                   const mahasiswa2 = ['fitria', 'fajar', 'aria'];
+                   console.log(mahasiswa1 === mahasiswa2); // false
+
+                   const binatang1 = ['kucing', 'kelinci', 'ikan'];
+                   const binatang2 = binatang1;
+                   console.log(binatang1 === binatang2); // true
 # JS DASAR DOM MANIPULATIOAN
