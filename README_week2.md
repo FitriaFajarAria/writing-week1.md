@@ -632,3 +632,156 @@ Kedua kategori mewakili dua cara berbeda tipe data ini disimpan ke dalam memori.
                    
                    
 # JS DASAR DOM MANIPULATIOAN
+
+DOM merupakan singkatan dari Document Object Model, dokumen (HTML) yang dimodelkan dalam sebuah objek. Objek dari dokumen ini menyediakan sekumpulan fungsi dan atribut/data yang bisa kita manfaatkan dalam membuat program Javascript. Inilah yang disebut API (Application Programming Interface). Penting untuk diingat, 
+**DOM bukan bagian dari JavaScript, melainkan browser (Web API)**
+
+
+![Gambar DOM](https://www.petanikode.com/img/js/dom/dom-api-html.png)
+
+## Cara Menggunakan DOM
+
+DOM adalah sebuah objek untuk memodelkan dokumen HTML.Objek DOM di javascript bernama document. Objek ini berisi segala hal yang kita butuhkan untuk memanipulasi HTML.
+Jika kita coba ketik document pada console Javascript, maka yang akan tampil adalah kode HTML. Di dalam objek document, terdapat fungsi-fungsi dan atribut yang bisa kita gunakan untuk memanipulasi dokumen HTML. Sebagai contoh fungsi documen.write().Fungsi ini digunakan untuk menulis sesuatu ke dokumen HTML.
+
+                     document.write("<h2>Hai Saya Sedang Megerjakan Tugas Writing</h2>");
+                     
+## Mengakses Elemen Dengan DOM
+
+Apabila kita ingin mengakses elemen yang spesifik, terdapat beberapa fungsi yang bisa digunakan:
+- getElementById() fungsi untuk memilih elemen berdasarkan atribut id.
+- getElementByName() fungsi untuk memilih elemen berdasarkan atribut name.
+- getElementByClassName() fungsi untuk memilih elemen berdasarkan atribut class.
+- getElementByTagName() fungsi untuk memilih elemen berdasarkan nama tag.
+- getElementByTagNameNS() fungsi untuk memilih elemen berdasarkan nama tag.
+- querySelector() fungsi untuk memilih elemen berdasarkan query.
+- querySelectorAll() fungsi untuk memilih elemen berdasarkan query.
+- dan lain-lain.
+
+contoh penerapan akses elemen berdasarkan ID:
+
+                     <!DOCTYPE html>
+                     <html>
+                     <head>
+                            <title>Contoh Penggunaan DOM</title>
+                     </head>
+                     <body>
+
+                          <!-- Elemen div yang akan kita pilih dari JS -->
+                         <div id="contoh"></div>
+
+
+                         <script type="text/javascript">
+                         // mengakses elemen contoh
+                        var contoh = document.getElementById("contoh");
+
+                        // mengisi teks ke dalam elemen
+                       contoh.innerText = "Tutorial Javascript";
+
+                        // memberikan CSS ke elemen
+                      contoh.style.backgroundColor = "red";
+                      contoh.style.padding = "10px";
+
+                      </script>
+
+                     </body>
+                     </html>
+                     
+                     
+Perlu diingat kalau getElementsByClassName itu akan ngereturn bentuk array; walaupun cuma ada 1 element dengan class itu
+Kalau bisa diulangin lagi penggunaan id dan class (id cuma boleh 1 element per page, class bisa beberapa sekaligus dan per element bisa beberapa class).
+                     
+## Membuat Elemen dengan DOM
+
+                     document.createElement('p');
+                     
+Maka, akan tercipta elemen <p> atau paragraf baru. Namun tidak akan ditampilkan ke dalam halaman web,karena belum menambahkannya ke dalam body dokumen. Cara menambahkannya ke body dokumen bisa gunakan fungsi append().     
+   
+                     <body>
+
+                   <script>
+                   // membuat element h1
+                   var judul = document.createElement("h1");
+        
+                     // mengisi kontent elemen
+                     judul.textContent = "Belajar Javascript";
+
+                     // menambahkan elemen ke dalam tag body
+                    document.body.append(judul);
+                  </script>
+
+                  </body>
+   
+ 
+   
+## Menghapus Elemen dengan DOM
+   
+   menggunakan fungsi remove().
+   
+   
+                    <body>
+
+                     <h2 id="fitria">Delete Saya!</h2>
+
+                   <script>
+                   // memilih elemen berdasarkan ID
+                  var h2 = document.getElementById('fitria');
+
+                  // menghapus elemen yang sudah dipilih
+                  h2.remove();
+
+                 console.log("Elemen sudah dihapus");
+                 console.log(h2);
+                 </script>
+
+                 </body>
+   
+   
+## Mengubah Konten Element dengan DOM
+   
+   - Element.textContent (Element.textContent dapat kita gunakan untuk mengubah teks di dalam sebuah element).
+   
+                           .textContent = "<span>Teks Heading</span"
+                              
+
+   - Element.innerHTML (Element.innerHTML dapat kita gunakan untuk mengubah konten HTML di dalam sebuah element).
+                        
+                           .innerHTML = "<span>Teks Heading</span"
+                              
+                              
+                              
+## Berbagai HTML DOM Events (Interaksi User)
+   
+User experience itu bersifat dua arah selain menampilkan element HTML, halaman web juga harus bisa menangkap interaksi user, EventListener:
+   
+- Focus
+- Change
+- Hover   
+- Click (Misalkan kita mempunyai element <input id=”user-input” />  dan <button id=”alert-button”>show</button>. Kita ingin menampilkan pop up box yang berisi teks di dalam input tadi).
+
+- Blur ("Blur", lawan dari "focus", adalah event di mana sebuah element kehilangan fokus dari user (misal user klk mouse di luar element tersebut atau user klik tab untuk berpindah element)
+
+- Scroll
+- Submit 
+   
+Misalkan kita mempunyai element beberapa input dalam sebuah form <input name=”email /> dan <input type=”password” name=”password” />. Bagaimana caranya  kita mendapatkan isi dari kedua input tersebut saat submit form? Pasang event listener di form, lalu gunakan FormData untuk mengambil data dari masing-masing input
+   
+   
+                  const form = document.getElementById("form")
+
+                  form.addEventListener("submit", function(event) {
+	                 // cegah page refresh
+	               event.preventDefault()
+
+               	const formData = new FormData(form)
+	               const values = Object.fromEntries(formData) // { email: ... }
+                  }
+
+
+   
+## Menangkap Interaksi User
+   
+- Element.addEventListener("event")
+- Element.onevent
+
+                              
